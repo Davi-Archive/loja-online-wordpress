@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+        .products>.gutter-sizer {
+            width: 3.2%
+        }
+
+        .gutter-sizer {
+            contain: paint style size
+        }
+
+        @media (max-width:680px) {
+            .gutter-sizer {
+                width: 0
+            }
+        }
+
+        .masonry>.post,
+        .products.masonry>.product {
+            animation-fill-mode: backwards;
+            transition: none;
+            animation: none;
+            clear: none !important;
+            margin-right: 0 !important;
+            margin-left: 0 !important
+        }
+
+        .masonry-done {
+            opacity: 1
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <style id="tb_inline_styles" data-no-optimize="1">
+        .tb_animation_on {
+            overflow-x: hidden
+        }
+
+        .themify_builder .wow {
+            visibility: hidden;
+            animation-fill-mode: both
+        }
+
+        [data-tf-animation] {
+            will-change: transform, opacity, visibility
+        }
+
+        .themify_builder .tf_lax_done {
+            transition-duration: .8s;
+            transition-timing-function: cubic-bezier(.165, .84, .44, 1)
+        }
+
+        [data-sticky-active].tb_sticky_scroll_active {
+            z-index: 1
+        }
+
+        [data-sticky-active].tb_sticky_scroll_active .hide-on-stick {
+            display: none
+        }
+
+        @media(min-width:1281px) {
+            .hide-desktop {
+                width: 0 !important;
+                height: 0 !important;
+                padding: 0 !important;
+                visibility: hidden !important;
+                margin: 0 !important;
+                display: table-column !important;
+                background: 0 !important
+            }
+        }
+
+        @media(min-width:769px) and (max-width:1280px) {
+            .hide-tablet_landscape {
+                width: 0 !important;
+                height: 0 !important;
+                padding: 0 !important;
+                visibility: hidden !important;
+                margin: 0 !important;
+                display: table-column !important;
+                background: 0 !important
+            }
+        }
+
+        @media(min-width:681px) and (max-width:768px) {
+            .hide-tablet {
+                width: 0 !important;
+                height: 0 !important;
+                padding: 0 !important;
+                visibility: hidden !important;
+                margin: 0 !important;
+                display: table-column !important;
+                background: 0 !important
+            }
+        }
+
+        @media(max-width:680px) {
+            .hide-mobile {
+                width: 0 !important;
+                height: 0 !important;
+                padding: 0 !important;
+                visibility: hidden !important;
+                margin: 0 !important;
+                display: table-column !important;
+                background: 0 !important
+            }
+        }
+
+        @media(max-width:680px) {
+            .themify_map.tf_map_loaded {
+                width: 100% !important
+            }
+
+            .ui.builder_button,
+            .ui.nav li a {
+                padding: .525em 1.15em
+            }
+
+            .fullheight>.row_inner:not(.tb_col_count_1) {
+                min-height: 0
+            }
+        }
+    </style><noscript>
+        <style>
+            .themify_builder .wow,
+            .wow .tf_lazy {
+                visibility: visible !important
+            }
+        </style>
+    </noscript>
+    <style id="tf_lazy_style" data-no-optimize="1">
+        [data-tf-src] {
+            opacity: 0
+        }
+
+        .tf_svg_lazy {
+            content-visibility: auto;
+            transition: filter .3s linear !important;
+            filter: blur(25px);
+            opacity: 1;
+            transform: translateZ(0)
+        }
+
+        .tf_svg_lazy_loaded {
+            filter: blur(0)
+        }
+
+        .module[data-lazy],
+        .module[data-lazy] .ui,
+        .module_row[data-lazy]:not(.tb_first),
+        .module_row[data-lazy]:not(.tb_first)>.row_inner,
+        .module_row:not(.tb_first) .module_column[data-lazy],
+        .module_row:not(.tb_first) .module_subrow[data-lazy],
+        .module_subrow[data-lazy]>.subrow_inner {
+
+            background-image: none !important
+        }
+    </style><noscript>
+        <style>
+            [data-tf-src] {
+                display: none !important
+            }
+
+            .tf_svg_lazy {
+                filter: none !important;
+                opacity: 1 !important
+            }
+        </style>
+    </noscript>
+    <style id="tf_lazy_common" data-no-optimize="1">
+        img {
+            max-width: 100%;
+            height: auto
+        }
+
+        .tf_fa {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            stroke-width: 0;
+            stroke: currentColor;
+            overflow: visible;
+            fill: currentColor;
+            pointer-events: none;
+            vertical-align: middle;
+            text-rendering: optimizeSpeed;
+            buffered-rendering: static
+        }
+
+        #tf_svg symbol {
+            overflow: visible
+        }
+
+        .tf_lazy {
+            position: relative;
+            visibility: visible;
+            display: block;
+            opacity: .3
+        }
+
+        .wow .tf_lazy {
+            visibility: hidden;
+            opacity: 1;
+            position: static;
+            display: inline
+        }
+
+        div.tf_audio_lazy audio {
+            visibility: hidden;
+            height: 0;
+            display: inline
+        }
+
+        .mejs-container {
+            visibility: visible
+        }
+
+        .tf_iframe_lazy {
+            transition: opacity .3s ease-in-out;
+            min-height: 10px
+        }
+
+        .tf_carousel .tf_swiper-wrapper {
+            display: flex
+        }
+
+        .tf_carousel .tf_swiper-slide {
+            flex-shrink: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%
+        }
+
+        .tf_carousel .tf_lazy {
+            contain: none
+        }
+
+        .tf_swiper-wrapper>br,
+        .tf_lazy.tf_swiper-wrapper .tf_lazy:after,
+        .tf_lazy.tf_swiper-wrapper .tf_lazy:before {
+            display: none
+        }
+
+        .tf_lazy:after,
+        .tf_lazy:before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            width: 10px !important;
+            height: 10px !important;
+            margin: 0 3px;
+            top: 50% !important;
+            right: 50% !important;
+            left: auto !important;
+            border-radius: 100%;
+            background-color: currentColor;
+            visibility: visible;
+            animation: tf-hrz-loader infinite .75s cubic-bezier(.2, .68, .18, 1.08)
+        }
+
+        .tf_lazy:after {
+            width: 6px !important;
+            height: 6px !important;
+            right: auto !important;
+            left: 50% !important;
+            margin-top: 3px;
+            animation-delay: -.4s
+        }
+
+        @keyframes tf-hrz-loader {
+            0% {
+                transform: scale(1);
+                opacity: 1
+            }
+
+            50% {
+                transform: scale(.1);
+                opacity: .6
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1
+            }
+        }
+
+        .tf_lazy_lightbox {
+            position: fixed;
+            background: rgba(11, 11, 11, .8);
+            color: #ccc;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999
+        }
+
+        .tf_lazy_lightbox .tf_lazy:after,
+        .tf_lazy_lightbox .tf_lazy:before {
+            background: #fff
+        }
+
+        .tf_vd_lazy {
+            display: flex;
+            flex-wrap: wrap
+        }
+
+        .tf_w.tf_vd_lazy video {
+            width: 100%;
+            height: auto;
+            position: static;
+            object-fit: cover
+        }
+    </style>
+    <title>Coffee – Demo for Coffee</title>
+    <link rel="stylesheet" media="all" id="tf_819996612" href="<?= get_template_directory_uri() ?>/css/none.min.css" fetchpriority="low">
+    <script type="text/template" id="tmpl-variation-template"><div class="woocommerce-variation-description">{{{ data.variation.variation_description }}}</div><div class="woocommerce-variation-price">{{{ data.variation.price_html }}}</div><div class="woocommerce-variation-availability">{{{ data.variation.availability_html }}}</div>
+</script>
+    <script type="text/template" id="tmpl-unavailable-variation-template"><p>Sorry, this product is unavailable. Please choose a different combination.</p>
+</script>
+    <meta name="robots" content="max-image-preview:large">
+    <link rel="alternate" type="application/rss+xml" title="Coffee » Feed" href="https://themify.org/ultra-coffee/feed/">
+    <link rel="alternate" type="application/rss+xml" title="Coffee » Comments Feed" href="https://themify.org/ultra-coffee/comments/feed/">
+    <style id="safe-svg-svg-icon-style-inline-css">
+        .safe-svg-cover .safe-svg-inside {
+            display: inline-block;
+            max-width: 100%
+        }
+
+        .safe-svg-cover svg {
+            height: 100%;
+            max-height: 100%;
+            max-width: 100%;
+            width: 100%
+        }
+    </style>
+    <link rel="preload" href="<?= get_template_directory_uri() ?>/css/classic-themes.min.css" as="style">
+    <link rel="stylesheet" id="classic-theme-styles-css" href="<?= get_template_directory_uri() ?>/css/classic-themes.min.css" media="all">
+    <style id="global-styles-inline-css">
+        body {
+            --wp--preset--color--black: #000000;
+            --wp--preset--color--cyan-bluish-gray: #abb8c3;
+            --wp--preset--color--white: #ffffff;
+            --wp--preset--color--pale-pink: #f78da7;
+            --wp--preset--color--vivid-red: #cf2e2e;
+            --wp--preset--color--luminous-vivid-orange: #ff6900;
+            --wp--preset--color--luminous-vivid-amber: #fcb900;
+            --wp--preset--color--light-green-cyan: #7bdcb5;
+            --wp--preset--color--vivid-green-cyan: #00d084;
+            --wp--preset--color--pale-cyan-blue: #8ed1fc;
+            --wp--preset--color--vivid-cyan-blue: #0693e3;
+            --wp--preset--color--vivid-purple: #9b51e0;
+            --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+            --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, rgb(122, 220, 180) 0%, rgb(0, 208, 130) 100%);
+            --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgba(252, 185, 0, 1) 0%, rgba(255, 105, 0, 1) 100%);
+            --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg, rgba(255, 105, 0, 1) 0%, rgb(207, 46, 46) 100%);
+            --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(169, 184, 195) 100%);
+            --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+            --wp--preset--gradient--blush-light-purple: linear-gradient(135deg, rgb(255, 206, 236) 0%, rgb(152, 150, 240) 100%);
+            --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%);
+            --wp--preset--gradient--luminous-dusk: linear-gradient(135deg, rgb(255, 203, 112) 0%, rgb(199, 81, 192) 50%, rgb(65, 88, 208) 100%);
+            --wp--preset--gradient--pale-ocean: linear-gradient(135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%);
+            --wp--preset--gradient--electric-grass: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+            --wp--preset--gradient--midnight: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%);
+            --wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');
+            --wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');
+            --wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');
+            --wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');
+            --wp--preset--duotone--midnight: url('#wp-duotone-midnight');
+            --wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');
+            --wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');
+            --wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');
+            --wp--preset--font-size--small: 13px;
+            --wp--preset--font-size--medium: 20px;
+            --wp--preset--font-size--large: 36px;
+            --wp--preset--font-size--x-large: 42px;
+            --wp--preset--spacing--20: 0.44rem;
+            --wp--preset--spacing--30: 0.67rem;
+            --wp--preset--spacing--40: 1rem;
+            --wp--preset--spacing--50: 1.5rem;
+            --wp--preset--spacing--60: 2.25rem;
+            --wp--preset--spacing--70: 3.38rem;
+            --wp--preset--spacing--80: 5.06rem;
+            --wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+            --wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
+            --wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
+            --wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);
+            --wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);
+        }
+
+        :where(.is-layout-flex) {
+            gap: 0.5em;
+        }
+
+        body .is-layout-flow>.alignleft {
+            float: left;
+            margin-inline-start: 0;
+            margin-inline-end: 2em;
+        }
+
+        body .is-layout-flow>.alignright {
+            float: right;
+            margin-inline-start: 2em;
+            margin-inline-end: 0;
+        }
+
+        body .is-layout-flow>.aligncenter {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        body .is-layout-constrained>.alignleft {
+            float: left;
+            margin-inline-start: 0;
+            margin-inline-end: 2em;
+        }
+
+        body .is-layout-constrained>.alignright {
+            float: right;
+            margin-inline-start: 2em;
+            margin-inline-end: 0;
+        }
+
+        body .is-layout-constrained>.aligncenter {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        body .is-layout-constrained> :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+            max-width: var(--wp--style--global--content-size);
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        body .is-layout-constrained>.alignwide {
+            max-width: var(--wp--style--global--wide-size);
+        }
+
+        body .is-layout-flex {
+            display: flex;
+        }
+
+        body .is-layout-flex {
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        body .is-layout-flex>* {
+            margin: 0;
+        }
+
+        :where(.wp-block-columns.is-layout-flex) {
+            gap: 2em;
+        }
+
+        .has-black-color {
+            color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-color {
+            color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-color {
+            color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-color {
+            color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-color {
+            color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-color {
+            color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-color {
+            color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-color {
+            color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-color {
+            color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-color {
+            color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-color {
+            color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-color {
+            color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-black-background-color {
+            background-color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-background-color {
+            background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-background-color {
+            background-color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-background-color {
+            background-color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-background-color {
+            background-color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-background-color {
+            background-color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-background-color {
+            background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-background-color {
+            background-color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-black-border-color {
+            border-color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-border-color {
+            border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-border-color {
+            border-color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-border-color {
+            border-color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-border-color {
+            border-color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-border-color {
+            border-color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-border-color {
+            border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-border-color {
+            border-color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+            background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;
+        }
+
+        .has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+            background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;
+        }
+
+        .has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-orange-to-vivid-red-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;
+        }
+
+        .has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+            background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;
+        }
+
+        .has-cool-to-warm-spectrum-gradient-background {
+            background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;
+        }
+
+        .has-blush-light-purple-gradient-background {
+            background: var(--wp--preset--gradient--blush-light-purple) !important;
+        }
+
+        .has-blush-bordeaux-gradient-background {
+            background: var(--wp--preset--gradient--blush-bordeaux) !important;
+        }
+
+        .has-luminous-dusk-gradient-background {
+            background: var(--wp--preset--gradient--luminous-dusk) !important;
+        }
+
+        .has-pale-ocean-gradient-background {
+            background: var(--wp--preset--gradient--pale-ocean) !important;
+        }
+
+        .has-electric-grass-gradient-background {
+            background: var(--wp--preset--gradient--electric-grass) !important;
+        }
+
+        .has-midnight-gradient-background {
+            background: var(--wp--preset--gradient--midnight) !important;
+        }
+
+        .has-small-font-size {
+            font-size: var(--wp--preset--font-size--small) !important;
+        }
+
+        .has-medium-font-size {
+            font-size: var(--wp--preset--font-size--medium) !important;
+        }
+
+        .has-large-font-size {
+            font-size: var(--wp--preset--font-size--large) !important;
+        }
+
+        .has-x-large-font-size {
+            font-size: var(--wp--preset--font-size--x-large) !important;
+        }
+
+        .wp-block-navigation a:where(:not(.wp-element-button)) {
+            color: inherit;
+        }
+
+        :where(.wp-block-columns.is-layout-flex) {
+            gap: 2em;
+        }
+
+        .wp-block-pullquote {
+            font-size: 1.5em;
+            line-height: 1.6;
+        }
+    </style>
+    <style id="woocommerce-inline-inline-css">
+        .woocommerce form .form-row .required {
+            visibility: visible;
+        }
+    </style>
+    <script defer="defer" src="<?= get_template_directory_uri() ?>/js/jquery.min.js" id="jquery-core-js"></script>
+    <link rel="https://api.w.org/" href="https://themify.org/ultra-coffee/wp-json/">
+    <link rel="alternate" type="application/json" href="https://themify.org/ultra-coffee/wp-json/wp/v2/pages/60">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://themify.org/ultra-coffee/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://themify.org/ultra-coffee/wp-includes/wlwmanifest.xml">
+    <meta name="generator" content="WordPress 6.2">
+    <meta name="generator" content="WooCommerce 7.6.0">
+    <link rel="canonical" href="https://themify.org/ultra-coffee/">
+    <link rel="shortlink" href="https://themify.org/ultra-coffee/">
+    <link rel="alternate" type="application/json+oembed" href="https://themify.org/ultra-coffee/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fthemify.org%2Fultra-coffee%2F">
+    <link rel="alternate" type="text/xml+oembed" href="https://themify.org/ultra-coffee/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fthemify.org%2Fultra-coffee%2F&amp;format=xml">
+    <style>
+        @keyframes themifyAnimatedBG {
+            0% {
+                background-color: #33baab
+            }
+
+            100% {
+                background-color: #e33b9e
+            }
+
+            50% {
+                background-color: #4961d7
+            }
+
+            33.3% {
+                background-color: #2ea85c
+            }
+
+            25% {
+                background-color: #2bb8ed
+            }
+
+            20% {
+                background-color: #dd5135
+            }
+        }
+
+        .module_row.animated-bg {
+            animation: themifyAnimatedBG 30000ms infinite alternate
+        }
+    </style><noscript>
+        <style>
+            .woocommerce-product-gallery {
+                opacity: 1 !important;
+            }
+        </style>
+    </noscript>
+    <link rel="prefetch" href="<?= get_template_directory_uri() ?>/js/themify.script.min.js" as="script" fetchpriority="low">
+    <link rel="prefetch" href="<?= get_template_directory_uri() ?>/js/themify.sidemenu.min.js" as="script" fetchpriority="low">
+    <link rel="prefetch" href="<?= get_template_directory_uri() ?>/js/wc.min.js" as="script" fetchpriority="low">
+    <link rel="prefetch" href="<?= get_template_directory_uri() ?>/js/isotop.min.js" as="script" fetchpriority="low">
+    <link rel="preload" href="<?= get_template_directory_uri() ?>/js/themify.builder.script.min.js" as="script" fetchpriority="low">
+    <link rel="preload" href="<?= get_template_directory_uri() ?>/img/coffee-bean-divider-300x21.png" as="image" fetchpriority="high">
+    <style id="tf_gf_fonts_style">
+        @font-face {
+            font-family: 'Playfair Display';
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/playfairdisplay/v30/nuFiD-vYSZviVYUb_rj3ij__anPXDTjYgFE_.woff2) format('woff2');
+            unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+
+        @font-face {
+            font-family: 'Playfair Display';
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/playfairdisplay/v30/nuFiD-vYSZviVYUb_rj3ij__anPXDTPYgFE_.woff2) format('woff2');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+        }
+
+        @font-face {
+            font-family: 'Playfair Display';
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/playfairdisplay/v30/nuFiD-vYSZviVYUb_rj3ij__anPXDTLYgFE_.woff2) format('woff2');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Playfair Display';
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/playfairdisplay/v30/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Playfair Display';
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/playfairdisplay/v30/nuFiD-vYSZviVYUb_rj3ij__anPXDTjYgFE_.woff2) format('woff2');
+            unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+
+        @font-face {
+            font-family: 'Playfair Display';
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/playfairdisplay/v30/nuFiD-vYSZviVYUb_rj3ij__anPXDTPYgFE_.woff2) format('woff2');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+        }
+
+        @font-face {
+            font-family: 'Playfair Display';
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/playfairdisplay/v30/nuFiD-vYSZviVYUb_rj3ij__anPXDTLYgFE_.woff2) format('woff2');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Playfair Display';
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/playfairdisplay/v30/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Playfair Display';
+            font-weight: 900;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/playfairdisplay/v30/nuFiD-vYSZviVYUb_rj3ij__anPXDTjYgFE_.woff2) format('woff2');
+            unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+
+        @font-face {
+            font-family: 'Playfair Display';
+            font-weight: 900;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/playfairdisplay/v30/nuFiD-vYSZviVYUb_rj3ij__anPXDTPYgFE_.woff2) format('woff2');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+        }
+
+        @font-face {
+            font-family: 'Playfair Display';
+            font-weight: 900;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/playfairdisplay/v30/nuFiD-vYSZviVYUb_rj3ij__anPXDTLYgFE_.woff2) format('woff2');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Playfair Display';
+            font-weight: 900;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/playfairdisplay/v30/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLDz8Z11lFc-K.woff2) format('woff2');
+            unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLDz8Z1JlFc-K.woff2) format('woff2');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLDz8Z1xlFQ.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJbecmNE.woff2) format('woff2');
+            unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJnecmNE.woff2) format('woff2');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecg.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLEj6Z11lFc-K.woff2) format('woff2');
+            unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLEj6Z1JlFc-K.woff2) format('woff2');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z11lFc-K.woff2) format('woff2');
+            unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z1JlFc-K.woff2) format('woff2');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-weight: 900;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLBT5Z11lFc-K.woff2) format('woff2');
+            unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-weight: 900;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLBT5Z1JlFc-K.woff2) format('woff2');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-weight: 900;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLBT5Z1xlFQ.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+    <link rel="preload" fetchpriority="high" href="<?= get_template_directory_uri() ?>/css/themify-3927606990.min.css" as="style">
+    <link fetchpriority="high" id="themify_concate-css" rel="stylesheet" href="<?= get_template_directory_uri() ?>/css/themify-3927606990.min.css">
+    <link as="script" rel="prefetch" href="<?= get_template_directory_uri() ?>/js/add-to-cart.min.js?ver=7.6.0">
+    <link as="script" rel="prefetch" href="<?= get_template_directory_uri() ?>/js/woocommerce.min.js?ver=7.6.0">
+    <link as="script" rel="prefetch" href="<?= get_template_directory_uri() ?>/js/single-product.min.js?ver=7.6.0">
+    <script async="" src="<?= get_template_directory_uri() ?>/js/jquery.isotope.min.js"></script>
+    <script async="" src="<?= get_template_directory_uri() ?>/js/isotop.min.js"></script>
+    <script async="" src="<?= get_template_directory_uri() ?>/js/scripts.min.js"></script>
+    <!-- Header Scripts Start -->
+    <?php wp_head() ?>
+    <!-- Header Scripts End -->
+
+
+</head>

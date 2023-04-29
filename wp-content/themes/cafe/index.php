@@ -1,182 +1,41 @@
 <?php get_header(); ?>
 
-<header id='header'></header>
-
 <body class="home page-template-default page page-id-60 theme-themify-ultra skin-coffee sidebar-none full_width woocommerce-js tb_animation_on ready-view header-horizontal fixed-header-enabled footer-horizontal-left tagline-off filter-hover-none filter-featured-only slide-cart sidemenu-active fixed-header-on" style="">
 	<a class="screen-reader-text skip-to-content" href="#content">Skip to content</a>
-	<svg id="tf_svg" style="display:none">
-		<defs>
-			<symbol id="tf-ti-search" viewBox="0 0 32 32">
-				<path d="m31.25 29.875-1.313 1.313-9.75-9.75a12.019 12.019 0 0 1-7.938 3c-6.75 0-12.25-5.5-12.25-12.25 0-3.25 1.25-6.375 3.563-8.688C5.875 1.25 8.937-.063 12.25-.063c6.75 0 12.25 5.5 12.25 12.25 0 3-1.125 5.813-3 7.938zm-19-7.312c5.688 0 10.313-4.688 10.313-10.375S17.938 1.813 12.25 1.813c-2.813 0-5.375 1.125-7.313 3.063-2 1.938-3.063 4.563-3.063 7.313 0 5.688 4.625 10.375 10.375 10.375z"></path>
-			</symbol>
-			<symbol id="tf-fas-shopping-cart" viewBox="0 0 36 32">
-				<path d="M33 18.81q-.25 1.2-1.44 1.2H13.25l.37 2h16.82q.68 0 1.12.55t.31 1.25l-.37 1.57q2 .93 2 3.12 0 1.44-1.03 2.47T30 32t-2.47-1.03-1.03-2.47q0-1.5 1.06-2.5H14.44q1.06 1 1.06 2.5 0 1.44-1.03 2.47T12 32t-2.47-1.03T8.5 28.5q0-2 1.75-3.06L5.88 4H1.5Q.88 4 .44 3.56T0 2.5v-1Q0 .87.44.44T1.5 0h6.44q.5 0 .9.34t.54.85L9.94 4H34.5q.75 0 1.19.56t.25 1.25z"></path>
-			</symbol>
-			<symbol id="tf-fas-search" viewBox="0 0 32 32">
-				<path d="M31.6 27.7q.4.4.4 1t-.4 1.1l-1.8 1.8q-.4.4-1 .4t-1.1-.4l-6.3-6.3q-.4-.4-.4-1v-1Q17.5 26 13 26q-5.4 0-9.2-3.8T0 13t3.8-9.2T13 0t9.2 3.8T26 13q0 4.5-2.8 8h1q.7 0 1.1.4zM13 21q3.3 0 5.7-2.3T21 13t-2.3-5.7T13 5 7.3 7.3 5 13t2.3 5.7T13 21z"></path>
-			</symbol>
-			<style id="tf_fonts_style">
-				.tf_fa.tf-fas-shopping-cart {
-					width: 1.123em
-				}
-			</style>
-		</defs>
-	</svg>
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
-		<defs>
-			<filter id="wp-duotone-dark-grayscale">
-				<fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix>
-				<fecomponenttransfer color-interpolation-filters="sRGB">
-					<fefuncr type="table" tableValues="0 0.49803921568627"></fefuncr>
-					<fefuncg type="table" tableValues="0 0.49803921568627"></fefuncg>
-					<fefuncb type="table" tableValues="0 0.49803921568627"></fefuncb>
-					<fefunca type="table" tableValues="1 1"></fefunca>
-				</fecomponenttransfer>
-				<fecomposite in2="SourceGraphic" operator="in"></fecomposite>
-			</filter>
-		</defs>
-	</svg>
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
-		<defs>
-			<filter id="wp-duotone-grayscale">
-				<fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix>
-				<fecomponenttransfer color-interpolation-filters="sRGB">
-					<fefuncr type="table" tableValues="0 1"></fefuncr>
-					<fefuncg type="table" tableValues="0 1"></fefuncg>
-					<fefuncb type="table" tableValues="0 1"></fefuncb>
-					<fefunca type="table" tableValues="1 1"></fefunca>
-				</fecomponenttransfer>
-				<fecomposite in2="SourceGraphic" operator="in"></fecomposite>
-			</filter>
-		</defs>
-	</svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
-		<defs>
-			<filter id="wp-duotone-purple-yellow">
-				<fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix>
-				<fecomponenttransfer color-interpolation-filters="sRGB">
-					<fefuncr type="table" tableValues="0.54901960784314 0.98823529411765"></fefuncr>
-					<fefuncg type="table" tableValues="0 1"></fefuncg>
-					<fefuncb type="table" tableValues="0.71764705882353 0.25490196078431"></fefuncb>
-					<fefunca type="table" tableValues="1 1"></fefunca>
-				</fecomponenttransfer>
-				<fecomposite in2="SourceGraphic" operator="in"></fecomposite>
-			</filter>
-		</defs>
-	</svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
-		<defs>
-			<filter id="wp-duotone-blue-red">
-				<fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix>
-				<fecomponenttransfer color-interpolation-filters="sRGB">
-					<fefuncr type="table" tableValues="0 1"></fefuncr>
-					<fefuncg type="table" tableValues="0 0.27843137254902"></fefuncg>
-					<fefuncb type="table" tableValues="0.5921568627451 0.27843137254902"></fefuncb>
-					<fefunca type="table" tableValues="1 1"></fefunca>
-				</fecomponenttransfer>
-				<fecomposite in2="SourceGraphic" operator="in"></fecomposite>
-			</filter>
-		</defs>
-	</svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
-		<defs>
-			<filter id="wp-duotone-midnight">
-				<fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix>
-				<fecomponenttransfer color-interpolation-filters="sRGB">
-					<fefuncr type="table" tableValues="0 0"></fefuncr>
-					<fefuncg type="table" tableValues="0 0.64705882352941"></fefuncg>
-					<fefuncb type="table" tableValues="0 1"></fefuncb>
-					<fefunca type="table" tableValues="1 1"></fefunca>
-				</fecomponenttransfer>
-				<fecomposite in2="SourceGraphic" operator="in"></fecomposite>
-			</filter>
-		</defs>
-	</svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
-		<defs>
-			<filter id="wp-duotone-magenta-yellow">
-				<fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix>
-				<fecomponenttransfer color-interpolation-filters="sRGB">
-					<fefuncr type="table" tableValues="0.78039215686275 1"></fefuncr>
-					<fefuncg type="table" tableValues="0 0.94901960784314"></fefuncg>
-					<fefuncb type="table" tableValues="0.35294117647059 0.47058823529412"></fefuncb>
-					<fefunca type="table" tableValues="1 1"></fefunca>
-				</fecomponenttransfer>
-				<fecomposite in2="SourceGraphic" operator="in"></fecomposite>
-			</filter>
-		</defs>
-	</svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
-		<defs>
-			<filter id="wp-duotone-purple-green">
-				<fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix>
-				<fecomponenttransfer color-interpolation-filters="sRGB">
-					<fefuncr type="table" tableValues="0.65098039215686 0.40392156862745"></fefuncr>
-					<fefuncg type="table" tableValues="0 1"></fefuncg>
-					<fefuncb type="table" tableValues="0.44705882352941 0.4"></fefuncb>
-					<fefunca type="table" tableValues="1 1"></fefunca>
-				</fecomponenttransfer>
-				<fecomposite in2="SourceGraphic" operator="in"></fecomposite>
-			</filter>
-		</defs>
-	</svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
-		<defs>
-			<filter id="wp-duotone-blue-orange">
-				<fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix>
-				<fecomponenttransfer color-interpolation-filters="sRGB">
-					<fefuncr type="table" tableValues="0.098039215686275 1"></fefuncr>
-					<fefuncg type="table" tableValues="0 0.66274509803922"></fefuncg>
-					<fefuncb type="table" tableValues="0.84705882352941 0.41960784313725"></fefuncb>
-					<fefunca type="table" tableValues="1 1"></fefunca>
-				</fecomponenttransfer>
-				<fecomposite in2="SourceGraphic" operator="in"></fecomposite>
-			</filter>
-		</defs>
-	</svg>
+
+
+
+
 	<div class="tf_search_form tf_search_overlay">
 		<form role="search" method="get" id="searchform" class="tf_rel tf_hide" action="https://themify.org/ultra-coffee/">
-			<div class="tf_icon_wrap icon-search"><svg aria-label="Search" class="tf_fa tf-ti-search" role="img">
+			<div class="tf_icon_wrap icon-search">
+				<svg aria-label="Search" class="tf_fa tf-ti-search" role="img">
 					<use href="#tf-ti-search"></use>
-				</svg></div><input type="text" name="s" id="s" title="Search" placeholder="Search" value="">
+				</svg>
+			</div>
+			<input type="text" name="s" id="s" title="Search" placeholder="Search" value="">
 		</form>
 	</div>
 	<div id="pagewrap" class="tf_box hfeed site">
 		<div id="headerwrap" class="tf_box tf_w fixed-header">
 			<div class="header-icons tf_hide"><a id="menu-icon" class="tf_inline_b tf_text_dec" href="https://themify.org/ultra-coffee/#mobile-menu" aria-label="Menu"><span class="menu-icon-inner tf_inline_b tf_vmiddle tf_overflow"></span><span class="screen-reader-text">Menu</span></a>
 				<div class="cart-icon empty-cart">
-					<div class="cart-wrap"><a class="cart-icon-link" href="https://themify.org/ultra-coffee/#slide-cart"><em class="icon-shopping-cart"><svg aria-label="Shop Cart" class="tf_fa tf-fas-shopping-cart" role="img">
-									<use href="#tf-fas-shopping-cart"></use>
-								</svg></em><span></span><em class="screen-reader-text">Cart</em></a></div>
+					<div class="cart-wrap">
+						<a class="cart-icon-link" href="https://themify.org/ultra-coffee/#slide-cart">
+							<em class="icon-shopping-cart">
+								<svg aria-label="Shop Cart" class="tf_fa tf-fas-shopping-cart" role="img">
+									<use href="#tf-fas-shopping-cart">
+									</use>
+								</svg>
+							</em>
+
+							<em class="screen-reader-text">Cart</em></a>
+					</div>
 				</div>
 			</div>
-			<header id="header" class="tf_box pagewidth tf_clearfix" itemscope="itemscope" itemtype="https://schema.org/WPHeader">
-				<div class="header-bar tf_box">
-					<div id="site-logo"><a href="https://themify.org/ultra-coffee" title="Coffee"><span>Coffee</span></a></div>
-				</div>
-				<div id="mobile-menu" class="sidemenu sidemenu-off tf_scrollbar">
-					<div class="navbar-wrapper tf_clearfix">
-						<div class="cart-icon empty-cart">
-							<div class="cart-wrap"><a class="cart-icon-link" href="https://themify.org/ultra-coffee/#slide-cart"><em class="icon-shopping-cart"><svg aria-label="Shop Cart" class="tf_fa tf-fas-shopping-cart" role="img">
-											<use href="#tf-fas-shopping-cart"></use>
-										</svg></em><span></span><em class="screen-reader-text">Cart</em></a></div>
-						</div>
-						<div class="social-widget tf_inline_b tf_vmiddle"> </div><a class="search-button tf_search_icon tf_vmiddle tf_inline_b" href="https://themify.org/ultra-coffee/#"><svg aria-label="Search" class="tf_fa tf-fas-search" role="img">
-								<use href="#tf-fas-search"></use>
-							</svg><span class="screen-reader-text">Search</span></a>
-						<nav id="main-nav-wrap" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
-							<ul id="main-nav" class="main-nav tf_clearfix tf_box" data-init="true">
-								<li class="menu-item-page-60 menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-60 current_page_item menu-item-76"><a href="https://themify.org/ultra-coffee/">Home</a> </li>
-								<li class="menu-item-page-62 menu-item menu-item-type-post_type menu-item-object-page menu-item-75"><a href="https://themify.org/ultra-coffee/about/">About</a> </li>
-								<li class="menu-item-page-8 menu-item menu-item-type-post_type menu-item-object-page menu-item-74"><a href="https://themify.org/ultra-coffee/shop/">Shop</a> </li>
-								<li class="menu-item-page-61 menu-item menu-item-type-post_type menu-item-object-page menu-item-73"><a href="https://themify.org/ultra-coffee/contact/">Contact</a> </li>
-							</ul>
-						</nav>
-					</div><a id="menu-icon-close" aria-label="Close menu" class="tf_close tf_hide" href="https://themify.org/ultra-coffee/#"><span class="screen-reader-text">Close Menu</span></a>
-				</div>
-				<div id="slide-cart" class="sidemenu sidemenu-off tf_scrollbar"><a href="https://themify.org/ultra-coffee/#" id="cart-icon-close" class="tf_close"><span class="screen-reader-text">Close Cart</span></a>
-					<div id="shopdock-ultra">
 
-						Your cart is empty. Go to <a href="https://themify.org/ultra-coffee/shop/">Shop</a>.
 
-					</div>
-					<!-- /#shopdock -->
-				</div>
-			</header>
+
 		</div>
 		<div class="tf_hidden tf_w" style="height: 0px; contain: strict;"></div>
 		<div id="body" class="tf_box tf_clear tf_mw tf_clearfix">

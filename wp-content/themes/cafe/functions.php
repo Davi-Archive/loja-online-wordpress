@@ -32,6 +32,18 @@ function register_code()
 }
 
 
+// Registrar Menu
+function register_my_menu()
+{
+    register_nav_menus(array(
+        'menu_principal' => __('Menu Principal'),
+        'informacao'  => __('Informação'),
+        'suporte'  => __('Suporte')
+    ));
+}
+add_action('init', 'register_my_menu');
+
+
 // change image size
 function cafe_custom_images()
 {
